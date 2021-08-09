@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\back\MemberController;
-use App\Http\Controllers\back\MessagesController;
+use App\Http\Controllers\back\AppoinmentController;
+use App\Http\Controllers\back\BannerController;
 use App\Http\Controllers\back\PdfDownloadController;
 use App\Http\Controllers\back\DoctorController;
+use App\Http\Controllers\back\PartnerController;
 use App\Http\Controllers\back\ServiceController;
 use App\Http\Controllers\back\SettingController;
 use App\Http\Controllers\back\SliderController;
@@ -33,12 +35,17 @@ Route::get('/pdf', [HomeController::class, 'allPdf'])->name('allPdf');
 Route::get('/notice', [HomeController::class, 'notice'])->name('notice');
 Route::get('/doctor', [HomeController::class, 'doctor'])->name('doctor');
 Route::get('/hospital', [HomeController::class, 'hospital'])->name('hospital');
+Route::get('/details/{id}', [HomeController::class, 'details'])->name('details');
+Route::get('/doc_details/{id}', [HomeController::class, 'doc_details'])->name('doc_details');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
+Route::get('/service_details/{id}', [HomeController::class, 'service_details'])->name('service_details');
 Route::get('/list/{type}', [HomeController::class, 'member'])->name('memberList');
 
-Route::group(['prefix' => 'contact', 'as' => 'contact.'], function () {
-    Route::get('/home', [HomeController::class, 'contactView'])->name('home');
-    Route::post('/contact', [HomeController::class, 'contact'])->name('store');
+
+
+Route::group(['prefix' => 'appoinment', 'as' => 'appoinment.'], function () {
+    Route::get('/create', [HomeController::class, 'create'])->name('create');
+    Route::post('/appoinment', [HomeController::class, 'appoinment'])->name('store');
 });
 
 Route::group(['prefix' => 'admin'], function () {
@@ -70,18 +77,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     });
 
-    Route::group(['prefix' => 'pdf'], function () {
-        Route::get('/', [PdfDownloadController::class, 'index'])->name('pdf.home');
-        Route::get('create/{id}', [PdfDownloadController::class, 'show'])->name('pdf.show');
+    
 
-        Route::get('create', [PdfDownloadController::class, 'create'])->name('pdf.create');
-        Route::post('store', [PdfDownloadController::class, 'store'])->name('pdf.store');
-        Route::get('status/{id}', [PdfDownloadController::class, 'status'])->name('pdf.status');
-        Route::get('edit/{id}', [PdfDownloadController::class, 'edit'])->name('pdf.edit');
-        Route::put('update/{id}', [PdfDownloadController::class, 'update'])->name('pdf.update');
-        Route::delete('delete/{id}', [PdfDownloadController::class, 'destroy'])->name('pdf.delete');
-
-    });
     Route::group(['prefix' => 'hospital', 'as' => 'hospital.'], function () {
         Route::get('/', [HospitalController::class, 'index'])->name('home');
 
@@ -93,6 +90,19 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('delete/{id}', [HospitalController::class, 'destroy'])->name('delete');
 
     });
+
+
+Route::group(['prefix' => 'partner', 'as' => 'partner.'], function () {
+    Route::get('/', [PartnerController::class, 'index'])->name('home');
+
+    Route::get('create', [PartnerController::class, 'create'])->name('create');
+    Route::post('store', [PartnerController::class, 'store'])->name('store');
+    Route::get('status/{id}', [PartnerController::class, 'status'])->name('status');
+    Route::get('edit/{id}', [PartnerController::class, 'edit'])->name('edit');
+    Route::put('update/{id}', [PartnerController::class, 'update'])->name('update');
+    Route::delete('delete/{id}', [PartnerController::class, 'destroy'])->name('delete');
+
+});
     Route::group(['prefix' => 'depertment', 'as' => 'depertment.'], function () {
         Route::get('/', [DepertmentController::class, 'index'])->name('home');
 
@@ -104,17 +114,22 @@ Route::group(['prefix' => 'admin'], function () {
         Route::delete('delete/{id}', [DepertmentController::class, 'destroy'])->name('delete');
 
     });
-    Route::group(['prefix' => 'members', 'as' => 'members.'], function () {
-        Route::get('list/{status}', [MemberController::class, 'index'])->name('home');
-
-        Route::get('create', [MemberController::class, 'create'])->name('create');
-        Route::post('store', [MemberController::class, 'store'])->name('store');
-        Route::get('status/{id}', [MemberController::class, 'status'])->name('status');
-        Route::get('edit/{id}', [MemberController::class, 'edit'])->name('edit');
-        Route::put('update/{id}', [MemberController::class, 'update'])->name('update');
-        Route::delete('delete/{id}', [MemberController::class, 'destroy'])->name('delete');
+    Route::group(['prefix' => 'appoinment', 'as' => 'appoinment.'], function () {
+        Route::get('index', [AppoinmentController::class, 'index'])->name('home');
+        Route::get('show/{id}', [AppoinmentController::class, 'show'])->name('show');
+       
+        Route::delete('delete/{id}', [AppoinmentController::class, 'destroy'])->name('delete');
 
     });
+
+    Route::group(['prefix' => 'banner', 'as' => 'banner.'], function () {
+        Route::get('index', [BannerController::class, 'index'])->name('home');
+        Route::post('config/{banner}', [BannerController::class, 'bannerUpdate'])->name('app');
+        Route::delete('delete/{id}', [BannerController::class, 'destroy'])->name('delete');
+
+    });
+
+
     Route::group(['prefix' => 'service', 'as' => 'service.'], function () {
         Route::get('/', [ServiceController::class, 'index'])->name('home');
 

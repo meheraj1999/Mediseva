@@ -128,7 +128,7 @@
                                     </div>
                                     <p class="hospital-description mb-2">{{$data->description}}</p>
                                     <div class="dc-btnarea">
-                                        <a href="#" class="dc-btn">Read More</a>
+                                        <a href="{{route('details',$data->id)}}" class="dc-btn">Read More</a>
                                     </div>
                                 </div>
                             </div>

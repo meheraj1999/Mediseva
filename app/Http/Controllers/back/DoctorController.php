@@ -37,7 +37,7 @@ class DoctorController extends Controller
             $request->file('image')->move($path, $name);
             $requested_data['image'] = $path . $name;
         }
-
+        $Doctor->status=1;
         $Doctor->fill($requested_data)->save();
         Toastr::success('Save Successfully');
 

@@ -8,11 +8,11 @@
 							Service
 						</h3>
 						<ul>
-							<li><a href="#">Ambulance</a></li>
-							<li><a href="#">Pharmacy</a></li>
-							<li><a href="#">Blood Bank </a></li>
-							<li><a href="#">Dental</a></li>
-							<li><a href="#">Therapy</a></li>
+                        @php($data=\App\Models\Service::where('status',1)->orderBy('title','asc')->limit(5)->get());
+                        @foreach($data as $footer)
+							<li><a href="{{route('service_details',$footer->id)}}">{{$footer->title}}</a></li>
+					
+                          @endforeach
 						</ul>
 					</div>
 				</div>

@@ -4,9 +4,11 @@ namespace app\Http\Controllers\front;
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use App\Models\Hospital;
+use App\Models\Appoinment;
 use App\Models\Service;
 use App\Models\Depertment;
-use App\Models\Member;
+use App\Models\Partner;
+use Brian2694\Toastr\Facades\Toastr;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 
@@ -19,10 +21,12 @@ class HomeController extends Controller
 
         // $limit = substr($about_us['value'], 0, 5000);
         $doctorData = Doctor::where('status', 1)->orderBy('name','asc')->limit(3)->get();
-        $hospitalData = Hospital::where('status', 1)->orderBy('name','asc')->limit(4)->get();
+        $hospitalData = Hospital::where('status', 1)->orderBy('id','desc')->limit(4)->get();
         $depertmentData = Depertment::where('status', 1)->orderBy('name','asc')->limit(6)->get();
-        
-        return view('front-views.homePage', compact('doctorData','hospitalData','depertmentData'));
+        $partnerData = Partner::where('status', 1)->get();
+
+
+        return view('front-views.homePage', compact('doctorData','hospitalData','depertmentData','partnerData'));
       //  return view('front-views.homePage'), [
         //     'limit'      => $limit,
 
@@ -48,6 +52,33 @@ class HomeController extends Controller
         $serviceData = Service::where('status', 1)->orderBy('title','asc')->get();
         return view('front-views.Service', compact('serviceData'));
      }
+
+     public function details( $id)
+     {
+    
+        $data = Hospital::findOrFail($id);
+        return view('front-views.details', compact('data'));
+     }
+
+     public function doc_details( $id)
+     {
+    
+        $data = Doctor::findOrFail($id);
+        return view('front-views.doctor_details', compact('data'));
+     }
+
+     public function create( )
+     {
+    
+        return view('front-views.Appoinment');
+     }
+
+     public function service_details( $id)
+     {
+    
+        $data = Service::findOrFail($id);
+        return view('front-views.service_details', compact('data'));
+     }
     
     public function socialActivity()
     {
@@ -66,9 +97,17 @@ class HomeController extends Controller
 
     }
 
-    public function allPdf()
+    public function appoinment(Request $request)
     {
-        return view('front-views.pdfDownload');
+        $appoinment = new Appoinment();
+        $requested_data = $request->all();
+    
+        $appoinment->status=1;
+        $appoinment->fill($requested_data)->save();
+        Toastr::success('appoinment booked Successfully');
+
+        return redirect()->back();
+          
     }
 
     public function photoGallery()

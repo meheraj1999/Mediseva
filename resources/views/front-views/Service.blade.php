@@ -45,7 +45,7 @@
 						<h3><a href="javascript:void(0)">{{$data->title}}</a></h3>
 						<p>{!!$data->description!!}</p>
 						<div class="dc-btn-area">
-							<a href="javascript:void(0)" class="dc-btn">Read More</a>
+							<a href="{{route('service_details',$data->id)}}" class="dc-btn">Read More</a>
 						</div>
 					</div>
 				</div>

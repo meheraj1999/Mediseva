@@ -18,5 +18,8 @@ class Doctor extends Model
         'code',
         'time',
         'fees',
+        'about',
+        'education',
+        'experiences'
     ];
 }
