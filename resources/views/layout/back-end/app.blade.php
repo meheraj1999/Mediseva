@@ -1,72 +1,76 @@
 <!doctype html>
 <html lang="en" class="no-focus">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Mediseva | Dashboard</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <meta name="description" content="Welcome to Mediseva Admin panel">
-        <meta name="author" content="Biz It">
-        <meta name="robots" content="noindex, nofollow">
+    <title>Mediseva | Dashboard</title>
 
-        <!-- Open Graph Meta -->
-        <meta property="og:title" content="Welcome to Mediseva Admin Panel">
-        <meta property="og:site_name" content="Forkaniya">
-        <meta property="og:description" content="Welcome to Mediseva Admin panel">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="">
+    <meta name="description" content="Welcome to Mediseva Admin panel">
+    <meta name="author" content="Biz It">
+    <meta name="robots" content="noindex, nofollow">
 
-        <!-- Icons -->
-        <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="{{ asset('assets/front-end/img/logo.jpg')}}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/front-end/img/logo.jpg')}}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/front-end/img/logo.jpg')}}">
-        <!-- END Icons -->
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Welcome to Mediseva Admin Panel">
+    <meta property="og:site_name" content="Forkaniya">
+    <meta property="og:description" content="Welcome to Mediseva Admin panel">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
 
-        <!-- Stylesheets -->
-        <!-- Page JS Plugins CSS -->
-        <link rel="stylesheet" href="{{ asset('assets/back-end/assets/js/plugins/slick/slick.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/back-end/assets/js/plugins/slick/slick-theme.css')}}">
-        <link rel="stylesheet" href="{{ asset('assets/back-end/assets/js/plugins/datatables/dataTables.bootstrap4.css')}}">
+    <!-- Icons -->
+    <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
+    <link rel="shortcut icon" href="{{ asset('assets/front-end/img/logo.jpg')}}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('assets/front-end/img/logo.jpg')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/front-end/img/logo.jpg')}}">
+    <!-- END Icons -->
 
-        <!-- Fonts and Codebase framework -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700&display=swap">
-        <link rel="stylesheet" id="css-main" href="{{ asset('assets/back-end/assets/css/codebase.min.css')}}">
-<link rel="stylesheet" href="{{ asset('js/toastr.min.css') }}">
-<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css"> 
+    <!-- Stylesheets -->
+    <!-- Page JS Plugins CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/back-end/assets/js/plugins/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/back-end/assets/js/plugins/slick/slick-theme.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/back-end/assets/js/plugins/datatables/dataTables.bootstrap4.css')}}">
 
-        <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-        <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css')}}"> -->
-        <!-- END Stylesheets -->
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-        @stack('css')
-    </head>
-    <body>
-        <style>
-            #main-container {
-                min-height: 400.125px;
-                color: white;
-                background: linear-gradient( 
-167deg
- , #ef5350 50%, #9c3368db 73%) center center / cover !important;         
-             .img-avatar.img-avatar32 {
-                    width: 88px;
-                    height: 91px;
-                }
-            .header_search_on{
+    <!-- Fonts and Codebase framework -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,400i,600,700&display=swap">
+    <link rel="stylesheet" id="css-main" href="{{ asset('assets/back-end/assets/css/codebase.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('js/toastr.min.css') }}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
+    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/flat.min.css')}}"> -->
+    <!-- END Stylesheets -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    @stack('css')
+</head>
+
+<body>
+    <style>
+        #main-container {
+            min-height: 400.125px;
+            color: white;
+            background: linear-gradient(167deg, #ef5350 50%, #9c3368db 73%) center center / cover !important;
+
+            .img-avatar.img-avatar32 {
+                width: 88px;
+                height: 91px;
+            }
+
+            .header_search_on {
                 display: none !important;
             }
+
             .table td {
                 text-align: center;
             }
+
             .table th {
                 text-align: center;
             }
-        </style>
-        <!-- Page Container -->
-        <!--
+    </style>
+    <!-- Page Container -->
+    <!--
             Available classes for #page-container:
 
         GENERIC
@@ -109,252 +113,267 @@
             'main-content-boxed'                        Full width Main Content with a specific maximum width (screen width > 1200px)
             'main-content-narrow'                       Full width Main Content with a percentage width (screen width > 1200px)
         -->
-        <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
-            <!-- Side Overlay-->
-            <aside id="side-overlay">
-                <!-- Side Header -->
-                <div class="content-header content-header-fullrow">
-                    <div class="content-header-section align-parent">
-                        <!-- Close Side Overlay -->
-                        <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
-                        <button type="button" class="btn btn-circle btn-dual-secondary align-v-r" data-toggle="layout" data-action="side_overlay_close">
-                            <i class="fa fa-times text-danger"></i>
-                        </button>
-                        <!-- END Close Side Overlay -->
+    <div id="page-container" class="sidebar-o enable-page-overlay side-scroll page-header-modern main-content-boxed">
+        <!-- Side Overlay-->
+        <aside id="side-overlay">
+            <!-- Side Header -->
+            <div class="content-header content-header-fullrow">
+                <div class="content-header-section align-parent">
+                    <!-- Close Side Overlay -->
+                    <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
+                    <button type="button" class="btn btn-circle btn-dual-secondary align-v-r" data-toggle="layout"
+                        data-action="side_overlay_close">
+                        <i class="fa fa-times text-danger"></i>
+                    </button>
+                    <!-- END Close Side Overlay -->
 
-                        <!-- User Info -->
-                        <div class="content-header-item">
-                            <a class="img-link mr-5" href="be_pages_generic_profile.html">
-                              
+                    <!-- User Info -->
+                    <div class="content-header-item">
+                        <a class="img-link mr-5" href="be_pages_generic_profile.html">
 
-                                <img class="img-avatar img-avatar32"src="{{ asset('assets/front-end/img/logo.png')}}" alt="">
-                            </a>
-                            <a class="align-middle link-effect text-primary-dark font-w600" href="be_pages_generic_profile.html">John Smith</a>
+
+                            <img class="img-avatar img-avatar32" src="{{ asset('assets/front-end/img/logo.png')}}"
+                                alt="">
+                        </a>
+                        <a class="align-middle link-effect text-primary-dark font-w600"
+                            href="be_pages_generic_profile.html">John Smith</a>
+                    </div>
+                    <!-- END User Info -->
+                </div>
+            </div>
+            <!-- END Side Header -->
+
+            <!-- Side Content -->
+            <div class="content-side">
+                <!-- Search -->
+
+                <!-- END Search -->
+
+                <!-- Mini Stats -->
+                <div class="block pull-r-l">
+                    <div class="block-content block-content-full block-content-sm bg-body-light">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="font-size-sm font-w600 text-uppercase text-muted">Clients</div>
+                                <div class="font-size-h4">460</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="font-size-sm font-w600 text-uppercase text-muted">Sales</div>
+                                <div class="font-size-h4">728</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="font-size-sm font-w600 text-uppercase text-muted">Earnings</div>
+                                <div class="font-size-h4">$7,860</div>
+                            </div>
                         </div>
-                        <!-- END User Info -->
                     </div>
                 </div>
-                <!-- END Side Header -->
+                <!-- END Mini Stats -->
 
-                <!-- Side Content -->
-                <div class="content-side">
-                    <!-- Search -->
-                   
-                    <!-- END Search -->
-
-                    <!-- Mini Stats -->
-                    <div class="block pull-r-l">
-                        <div class="block-content block-content-full block-content-sm bg-body-light">
-                            <div class="row">
-                                <div class="col-4">
-                                    <div class="font-size-sm font-w600 text-uppercase text-muted">Clients</div>
-                                    <div class="font-size-h4">460</div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="font-size-sm font-w600 text-uppercase text-muted">Sales</div>
-                                    <div class="font-size-h4">728</div>
-                                </div>
-                                <div class="col-4">
-                                    <div class="font-size-sm font-w600 text-uppercase text-muted">Earnings</div>
-                                    <div class="font-size-h4">$7,860</div>
-                                </div>
-                            </div>
+                <!-- Friends -->
+                <div class="block pull-r-l">
+                    <div class="block-header bg-body-light">
+                        <h3 class="block-title"><i class="fa fa-fw fa-users font-size-default mr-5"></i>Friends</h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option"
+                                data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                            <button type="button" class="btn-block-option" data-toggle="block-option"
+                                data-action="content_toggle"></button>
                         </div>
                     </div>
-                    <!-- END Mini Stats -->
-
-                    <!-- Friends -->
-                    <div class="block pull-r-l">
-                        <div class="block-header bg-body-light">
-                            <h3 class="block-title"><i class="fa fa-fw fa-users font-size-default mr-5"></i>Friends</h3>
-                            <div class="block-options">
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                    <i class="si si-refresh"></i>
-                                </button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                            </div>
-                        </div>
-                        <div class="block-content">
-                            <ul class="nav-users push">
-                                <li>
-                                    <a href="be_pages_generic_profile.html">
-                                        <img class="img-avatar" src="assets/media/avatars/avatar5.jpg" alt="">
-                                        <i class="fa fa-circle text-success"></i> Susan Day
-                                        <div class="font-w400 font-size-xs text-muted">Photographer</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="be_pages_generic_profile.html">
-                                        <img class="img-avatar" src="assets/media/avatars/avatar11.jpg" alt="">
-                                        <i class="fa fa-circle text-success"></i> Wayne Garcia
-                                        <div class="font-w400 font-size-xs text-muted">Web Designer</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="be_pages_generic_profile.html">
-                                        <img class="img-avatar" src="assets/media/avatars/avatar8.jpg" alt="">
-                                        <i class="fa fa-circle text-warning"></i> Betty Kelley
-                                        <div class="font-w400 font-size-xs text-muted">UI Designer</div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="be_pages_generic_profile.html">
-                                        <img class="img-avatar" src="assets/media/avatars/avatar10.jpg" alt="">
-                                        <i class="fa fa-circle text-danger"></i> Jesse Fisher
-                                        <div class="font-w400 font-size-xs text-muted">Copywriter</div>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="block-content">
+                        <ul class="nav-users push">
+                            <li>
+                                <a href="be_pages_generic_profile.html">
+                                    <img class="img-avatar" src="assets/media/avatars/avatar5.jpg" alt="">
+                                    <i class="fa fa-circle text-success"></i> Susan Day
+                                    <div class="font-w400 font-size-xs text-muted">Photographer</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="be_pages_generic_profile.html">
+                                    <img class="img-avatar" src="assets/media/avatars/avatar11.jpg" alt="">
+                                    <i class="fa fa-circle text-success"></i> Wayne Garcia
+                                    <div class="font-w400 font-size-xs text-muted">Web Designer</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="be_pages_generic_profile.html">
+                                    <img class="img-avatar" src="assets/media/avatars/avatar8.jpg" alt="">
+                                    <i class="fa fa-circle text-warning"></i> Betty Kelley
+                                    <div class="font-w400 font-size-xs text-muted">UI Designer</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="be_pages_generic_profile.html">
+                                    <img class="img-avatar" src="assets/media/avatars/avatar10.jpg" alt="">
+                                    <i class="fa fa-circle text-danger"></i> Jesse Fisher
+                                    <div class="font-w400 font-size-xs text-muted">Copywriter</div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- END Friends -->
-
-                    <!-- Activity -->
-                    <div class="block pull-r-l">
-                        <div class="block-header bg-body-light">
-                            <h3 class="block-title">
-                                <i class="fa fa-fw fa-clock-o font-size-default mr-5"></i>Activity
-                            </h3>
-                            <div class="block-options">
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle" data-action-mode="demo">
-                                    <i class="si si-refresh"></i>
-                                </button>
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                            </div>
-                        </div>
-                        <div class="block-content">
-                            <ul class="list list-activity">
-                                <li>
-                                    <i class="si si-wallet text-success"></i>
-                                    <div class="font-w600">+$29 New sale</div>
-                                    <div>
-                                        <a href="javascript:void(0)">Admin Template</a>
-                                    </div>
-                                    <div class="font-size-xs text-muted">5 min ago</div>
-                                </li>
-                                <li>
-                                    <i class="si si-close text-danger"></i>
-                                    <div class="font-w600">Project removed</div>
-                                    <div>
-                                        <a href="javascript:void(0)">Best Icon Set</a>
-                                    </div>
-                                    <div class="font-size-xs text-muted">26 min ago</div>
-                                </li>
-                                <li>
-                                    <i class="si si-pencil text-info"></i>
-                                    <div class="font-w600">You edited the file</div>
-                                    <div>
-                                        <a href="javascript:void(0)">
-                                            <i class="fa fa-file-text-o"></i> Docs.doc
-                                        </a>
-                                    </div>
-                                    <div class="font-size-xs text-muted">3 hours ago</div>
-                                </li>
-                                <li>
-                                    <i class="si si-plus text-success"></i>
-                                    <div class="font-w600">New user</div>
-                                    <div>
-                                        <a href="javascript:void(0)">StudioWeb - View Profile</a>
-                                    </div>
-                                    <div class="font-size-xs text-muted">5 hours ago</div>
-                                </li>
-                                <li>
-                                    <i class="si si-wrench text-warning"></i>
-                                    <div class="font-w600">App v5.5 is available</div>
-                                    <div>
-                                        <a href="javascript:void(0)">Update now</a>
-                                    </div>
-                                    <div class="font-size-xs text-muted">8 hours ago</div>
-                                </li>
-                                <li>
-                                    <i class="si si-user-follow text-pulse"></i>
-                                    <div class="font-w600">+1 Friend Request</div>
-                                    <div>
-                                        <a href="javascript:void(0)">Accept</a>
-                                    </div>
-                                    <div class="font-size-xs text-muted">1 day ago</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- END Activity -->
-
-                    <!-- Profile -->
-                    <div class="block pull-r-l">
-                        <div class="block-header bg-body-light">
-                            <h3 class="block-title">
-                                <i class="fa fa-fw fa-pencil font-size-default mr-5"></i>Profile
-                            </h3>
-                            <div class="block-options">
-                                <button type="button" class="btn-block-option" data-toggle="block-option" data-action="content_toggle"></button>
-                            </div>
-                        </div>
-                        <div class="block-content">
-                            <form action="be_pages_dashboard.html" method="post" onsubmit="return false;">
-                                <div class="form-group mb-15">
-                                    <label for="side-overlay-profile-name">Name</label>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" id="side-overlay-profile-name" name="side-overlay-profile-name" placeholder="Your name.." value="John Smith">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-user"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-15">
-                                    <label for="side-overlay-profile-email">Email</label>
-                                    <div class="input-group">
-                                        <input type="email" class="form-control" id="side-overlay-profile-email" name="side-overlay-profile-email" placeholder="Your email.." value="john.smith@example.com">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-envelope"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-15">
-                                    <label for="side-overlay-profile-password">New Password</label>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" id="side-overlay-profile-password" name="side-overlay-profile-password" placeholder="New Password..">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-asterisk"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-15">
-                                    <label for="side-overlay-profile-password-confirm">Confirm New Password</label>
-                                    <div class="input-group">
-                                        <input type="password" class="form-control" id="side-overlay-profile-password-confirm" name="side-overlay-profile-password-confirm" placeholder="Confirm New Password..">
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-asterisk"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-6">
-                                        <button type="submit" class="btn btn-block btn-alt-primary">
-                                            <i class="fa fa-refresh mr-5"></i> Update
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <!-- END Profile -->
-
-                
                 </div>
-                <!-- END Side Content -->
-            </aside>
-            <!-- END Side Overlay -->
+                <!-- END Friends -->
 
-            <!-- Sidebar -->
-            <!--
+                <!-- Activity -->
+                <div class="block pull-r-l">
+                    <div class="block-header bg-body-light">
+                        <h3 class="block-title">
+                            <i class="fa fa-fw fa-clock-o font-size-default mr-5"></i>Activity
+                        </h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option"
+                                data-action="state_toggle" data-action-mode="demo">
+                                <i class="si si-refresh"></i>
+                            </button>
+                            <button type="button" class="btn-block-option" data-toggle="block-option"
+                                data-action="content_toggle"></button>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <ul class="list list-activity">
+                            <li>
+                                <i class="si si-wallet text-success"></i>
+                                <div class="font-w600">+$29 New sale</div>
+                                <div>
+                                    <a href="javascript:void(0)">Admin Template</a>
+                                </div>
+                                <div class="font-size-xs text-muted">5 min ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-close text-danger"></i>
+                                <div class="font-w600">Project removed</div>
+                                <div>
+                                    <a href="javascript:void(0)">Best Icon Set</a>
+                                </div>
+                                <div class="font-size-xs text-muted">26 min ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-pencil text-info"></i>
+                                <div class="font-w600">You edited the file</div>
+                                <div>
+                                    <a href="javascript:void(0)">
+                                        <i class="fa fa-file-text-o"></i> Docs.doc
+                                    </a>
+                                </div>
+                                <div class="font-size-xs text-muted">3 hours ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-plus text-success"></i>
+                                <div class="font-w600">New user</div>
+                                <div>
+                                    <a href="javascript:void(0)">StudioWeb - View Profile</a>
+                                </div>
+                                <div class="font-size-xs text-muted">5 hours ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-wrench text-warning"></i>
+                                <div class="font-w600">App v5.5 is available</div>
+                                <div>
+                                    <a href="javascript:void(0)">Update now</a>
+                                </div>
+                                <div class="font-size-xs text-muted">8 hours ago</div>
+                            </li>
+                            <li>
+                                <i class="si si-user-follow text-pulse"></i>
+                                <div class="font-w600">+1 Friend Request</div>
+                                <div>
+                                    <a href="javascript:void(0)">Accept</a>
+                                </div>
+                                <div class="font-size-xs text-muted">1 day ago</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END Activity -->
+
+                <!-- Profile -->
+                <div class="block pull-r-l">
+                    <div class="block-header bg-body-light">
+                        <h3 class="block-title">
+                            <i class="fa fa-fw fa-pencil font-size-default mr-5"></i>Profile
+                        </h3>
+                        <div class="block-options">
+                            <button type="button" class="btn-block-option" data-toggle="block-option"
+                                data-action="content_toggle"></button>
+                        </div>
+                    </div>
+                    <div class="block-content">
+                        <form action="be_pages_dashboard.html" method="post" onsubmit="return false;">
+                            <div class="form-group mb-15">
+                                <label for="side-overlay-profile-name">Name</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="side-overlay-profile-name"
+                                        name="side-overlay-profile-name" placeholder="Your name.." value="John Smith">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-15">
+                                <label for="side-overlay-profile-email">Email</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="side-overlay-profile-email"
+                                        name="side-overlay-profile-email" placeholder="Your email.."
+                                        value="john.smith@example.com">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-15">
+                                <label for="side-overlay-profile-password">New Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="side-overlay-profile-password"
+                                        name="side-overlay-profile-password" placeholder="New Password..">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-asterisk"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-15">
+                                <label for="side-overlay-profile-password-confirm">Confirm New Password</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control"
+                                        id="side-overlay-profile-password-confirm"
+                                        name="side-overlay-profile-password-confirm"
+                                        placeholder="Confirm New Password..">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fa fa-asterisk"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-block btn-alt-primary">
+                                        <i class="fa fa-refresh mr-5"></i> Update
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Profile -->
+
+
+            </div>
+            <!-- END Side Content -->
+        </aside>
+        <!-- END Side Overlay -->
+
+        <!-- Sidebar -->
+        <!--
                 Helper classes
 
                 Adding .sidebar-mini-hide to an element will make it invisible (opacity: 0) when the sidebar is in mini mode
@@ -365,15 +384,15 @@
                 Adding .sidebar-mini-visible to an element will show it only when the sidebar is in mini mode
                     - use .sidebar-mini-visible-b if you would like to be a block when visible (display: block)
             -->
-         @include('layout.back-end.partials.sidebar')
-@include('navigation-menu')
-          @yield('content')
+        @include('layout.back-end.partials.sidebar')
+        @include('navigation-menu')
+        @yield('content')
 
-            @include('layout.back-end.partials.footer')
-        </div>
-        <!-- END Page Container -->
+        @include('layout.back-end.partials.footer')
+    </div>
+    <!-- END Page Container -->
 
-        {{-- <!-- Onboarding Modal functionality is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _es6/pages/be_pages_dashboard.js -->
+    {{-- <!-- Onboarding Modal functionality is initialized in js/pages/be_pages_dashboard.min.js which was auto compiled from _es6/pages/be_pages_dashboard.js -->
         <div class="modal fade" id="modal-onboarding" tabindex="-1" role="dialog" aria-labelledby="modal-onboarding" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-popout" role="document">
                 <div class="modal-content rounded">
@@ -443,7 +462,7 @@
         <!-- END Onboarding Modal --> --}}
 
 
-        <!--
+    <!--
             Codebase JS Core
 
             Vital libraries and plugins used in all pages. You can choose to not include this file if you would like
@@ -460,41 +479,44 @@
             assets/js/core/jquery.countTo.min.js
             assets/js/core/js.cookie.min.js
         -->
-        <script src="{{ asset('assets/back-end/assets/js/codebase.core.min.js')}}"></script>
+    <script src="{{ asset('assets/back-end/assets/js/codebase.core.min.js')}}"></script>
 
-        <!--
+    <!--
             Codebase JS
 
             Custom functionality including Blocks/Layout API as well as other vital and optional helpers
             webpack is putting everything together at assets/_es6/main/app.js
         -->
-        <script src="{{ asset('assets/back-end/assets/js/codebase.app.min.js')}}"></script>
+    <script src="{{ asset('assets/back-end/assets/js/codebase.app.min.js')}}"></script>
 
-        <!-- Page JS Plugins -->
-        <script src="{{ asset('assets/back-end/assets/js/plugins/chartjs/Chart.bundle.min.js')}}"></script>
-        <script src="{{ asset('assets/back-end/assets/js/plugins/slick/slick.min.js')}}"></script>
-        <script src="{{ asset('js/swal.js')}}"></script>
-        <script src="{{ asset('js/toastr.min.js')}}"></script>
+    <!-- Page JS Plugins -->
+    <script src="{{ asset('assets/back-end/assets/js/plugins/chartjs/Chart.bundle.min.js')}}"></script>
+    <script src="{{ asset('assets/back-end/assets/js/plugins/slick/slick.min.js')}}"></script>
+    <script src="{{ asset('js/swal.js')}}"></script>
+    <script src="{{ asset('js/toastr.min.js')}}"></script>
 
-{{--ck editor--}}
-<script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
-<script>CKEDITOR.replace('editor');</script>
-{{--ck editor--}}
- <!-- Page JS Plugins -->
- <script src="{{ asset('assets/back-end/assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
- <script src="{{ asset('assets/back-end/assets/js/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
+    {{--ck editor--}}
+    <script src="{{ asset('ckeditor/ckeditor.js')}}"></script>
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
+    {{--ck editor--}}
+    <!-- Page JS Plugins -->
+    <script src="{{ asset('assets/back-end/assets/js/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('assets/back-end/assets/js/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
- <!-- Page JS Code -->
- <script src="{{ asset('assets/back-end/assets/js/pages/be_tables_datatables.min.js')}}"></script>
+    <!-- Page JS Code -->
+    <script src="{{ asset('assets/back-end/assets/js/pages/be_tables_datatables.min.js')}}"></script>
 
-  </script>
-        <!-- Page JS Code -->
-        <script src="{{ asset('assets/back-end/assets/js/pages/be_pages_dashboard.min.js') }}"></script>
-        <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
-        {!! Toastr::message() !!}
-        
-        @yield('script')
-        
-        
-    </body>
+    </script>
+    <!-- Page JS Code -->
+    <script src="{{ asset('assets/back-end/assets/js/pages/be_pages_dashboard.min.js') }}"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
+
+    @yield('script')
+
+
+</body>
+
 </html>

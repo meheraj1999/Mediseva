@@ -37,7 +37,7 @@ class HospitalController extends Controller
             $request->file('image')->move($path, $name);
             $requested_data['image'] = $path . $name;
         }
-
+       $Hospital->status=1;
         $Hospital->fill($requested_data)->save();
         Toastr::success('Save Successfully');
 

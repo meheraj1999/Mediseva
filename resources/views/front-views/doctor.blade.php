@@ -180,7 +180,7 @@
                                 <span><i class="ti-wallet"></i>{{$data->time}}</span>
                                 <span><i class="ti-wallet"></i>{{$data->fees}}</span>
                                 <div class="dc-btnarea">
-                                    <a href="#" class="dc-btn">Book Appointment</a>
+                                    <a href="{{route('doc_details',$data->id)}}" class="dc-btn">Book Appointment</a>
                                 </div>
                             </div>
                         </div>

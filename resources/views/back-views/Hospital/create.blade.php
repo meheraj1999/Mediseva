@@ -60,9 +60,25 @@
                     </div>
                 </div>
          
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                   <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group row">
+                    <label class="col-12" for="example-text-input">contact</label>
+                    <div class="col-md-12">
+                        <input type="number" name="contact" required class="form-control" id="example-text-input" name="name" placeholder="Text..">
+                    </div>
+             </div>
 
-              
-              
+             <div class="form-group row">
+                    <label class="col-12" for="example-text-input">Web site</label>
+                    <div class="col-md-12">
+                        <input type="text" name="site" required class="form-control" id="example-text-input" name="name" placeholder="Text..">
+                    </div>
+             </div>
+
                 <div class="form-group row">
                     <div class="col-12">
                         <button type="submit" class="btn btn-alt-primary">save</button>
